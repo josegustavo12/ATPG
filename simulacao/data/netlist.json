@@ -1,6 +1,6 @@
 {
   "modules": {
-    "c6288": {
+    "c880": {
       "ports": {
         "G1": {
           "direction": "input",
@@ -106,7 +106,75 @@
           "direction": "input",
           "width": 1
         },
+        "G33": {
+          "direction": "input",
+          "width": 1
+        },
+        "G34": {
+          "direction": "input",
+          "width": 1
+        },
+        "G35": {
+          "direction": "input",
+          "width": 1
+        },
+        "G36": {
+          "direction": "input",
+          "width": 1
+        },
+        "G37": {
+          "direction": "input",
+          "width": 1
+        },
+        "G38": {
+          "direction": "input",
+          "width": 1
+        },
+        "G39": {
+          "direction": "input",
+          "width": 1
+        },
         "G4": {
+          "direction": "input",
+          "width": 1
+        },
+        "G40": {
+          "direction": "input",
+          "width": 1
+        },
+        "G41": {
+          "direction": "input",
+          "width": 1
+        },
+        "G42": {
+          "direction": "input",
+          "width": 1
+        },
+        "G43": {
+          "direction": "input",
+          "width": 1
+        },
+        "G44": {
+          "direction": "input",
+          "width": 1
+        },
+        "G45": {
+          "direction": "input",
+          "width": 1
+        },
+        "G46": {
+          "direction": "input",
+          "width": 1
+        },
+        "G47": {
+          "direction": "input",
+          "width": 1
+        },
+        "G48": {
+          "direction": "input",
+          "width": 1
+        },
+        "G49": {
           "direction": "input",
           "width": 1
         },
@@ -114,136 +182,52 @@
           "direction": "input",
           "width": 1
         },
+        "G50": {
+          "direction": "input",
+          "width": 1
+        },
+        "G51": {
+          "direction": "input",
+          "width": 1
+        },
+        "G52": {
+          "direction": "input",
+          "width": 1
+        },
+        "G53": {
+          "direction": "input",
+          "width": 1
+        },
+        "G54": {
+          "direction": "input",
+          "width": 1
+        },
+        "G55": {
+          "direction": "input",
+          "width": 1
+        },
+        "G56": {
+          "direction": "input",
+          "width": 1
+        },
+        "G57": {
+          "direction": "input",
+          "width": 1
+        },
+        "G58": {
+          "direction": "input",
+          "width": 1
+        },
+        "G59": {
+          "direction": "input",
+          "width": 1
+        },
         "G6": {
           "direction": "input",
           "width": 1
         },
-        "G6257": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6258": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6259": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6260": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6261": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6262": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6263": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6264": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6265": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6266": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6267": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6268": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6269": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6270": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6271": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6272": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6273": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6274": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6275": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6276": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6277": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6278": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6279": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6280": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6281": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6282": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6283": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6284": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6285": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6286": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6287": {
-          "direction": "output",
-          "width": 1
-        },
-        "G6288": {
-          "direction": "output",
+        "G60": {
+          "direction": "input",
           "width": 1
         },
         "G7": {
@@ -254,12 +238,2799 @@
           "direction": "input",
           "width": 1
         },
+        "G855": {
+          "direction": "output",
+          "width": 1
+        },
+        "G856": {
+          "direction": "output",
+          "width": 1
+        },
+        "G857": {
+          "direction": "output",
+          "width": 1
+        },
+        "G858": {
+          "direction": "output",
+          "width": 1
+        },
+        "G859": {
+          "direction": "output",
+          "width": 1
+        },
+        "G860": {
+          "direction": "output",
+          "width": 1
+        },
+        "G861": {
+          "direction": "output",
+          "width": 1
+        },
+        "G862": {
+          "direction": "output",
+          "width": 1
+        },
+        "G863": {
+          "direction": "output",
+          "width": 1
+        },
+        "G864": {
+          "direction": "output",
+          "width": 1
+        },
+        "G865": {
+          "direction": "output",
+          "width": 1
+        },
+        "G866": {
+          "direction": "output",
+          "width": 1
+        },
+        "G867": {
+          "direction": "output",
+          "width": 1
+        },
+        "G868": {
+          "direction": "output",
+          "width": 1
+        },
+        "G869": {
+          "direction": "output",
+          "width": 1
+        },
+        "G870": {
+          "direction": "output",
+          "width": 1
+        },
+        "G871": {
+          "direction": "output",
+          "width": 1
+        },
+        "G872": {
+          "direction": "output",
+          "width": 1
+        },
+        "G873": {
+          "direction": "output",
+          "width": 1
+        },
+        "G874": {
+          "direction": "output",
+          "width": 1
+        },
+        "G875": {
+          "direction": "output",
+          "width": 1
+        },
+        "G876": {
+          "direction": "output",
+          "width": 1
+        },
+        "G877": {
+          "direction": "output",
+          "width": 1
+        },
+        "G878": {
+          "direction": "output",
+          "width": 1
+        },
+        "G879": {
+          "direction": "output",
+          "width": 1
+        },
+        "G880": {
+          "direction": "output",
+          "width": 1
+        },
         "G9": {
           "direction": "input",
           "width": 1
         }
       },
-      "connections": []
+      "connections": [],
+      "gates": [
+        {
+          "name": "NAND4_0",
+          "type": "nand",
+          "connections": {
+            "null": "G4"
+          }
+        },
+        {
+          "name": "NAND4_1",
+          "type": "nand",
+          "connections": {
+            "null": "G4"
+          }
+        },
+        {
+          "name": "AND3_0",
+          "type": "and",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "AND3_1",
+          "type": "and",
+          "connections": {
+            "null": "G9"
+          }
+        },
+        {
+          "name": "NAND4_2",
+          "type": "nand",
+          "connections": {
+            "null": "G4"
+          }
+        },
+        {
+          "name": "NAND4_3",
+          "type": "nand",
+          "connections": {
+            "null": "G10"
+          }
+        },
+        {
+          "name": "NAND4_4",
+          "type": "nand",
+          "connections": {
+            "null": "G13"
+          }
+        },
+        {
+          "name": "NAND2_0",
+          "type": "nand",
+          "connections": {
+            "null": "G12"
+          }
+        },
+        {
+          "name": "NAND3_0",
+          "type": "nand",
+          "connections": {
+            "null": "G15"
+          }
+        },
+        {
+          "name": "AND3_2",
+          "type": "and",
+          "connections": {
+            "null": "G17"
+          }
+        },
+        {
+          "name": "AND3_3",
+          "type": "and",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "AND3_4",
+          "type": "and",
+          "connections": {
+            "null": "G17"
+          }
+        },
+        {
+          "name": "AND3_5",
+          "type": "and",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "AND3_6",
+          "type": "and",
+          "connections": {
+            "null": "G17"
+          }
+        },
+        {
+          "name": "AND3_7",
+          "type": "and",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "AND3_8",
+          "type": "and",
+          "connections": {
+            "null": "G17"
+          }
+        },
+        {
+          "name": "AND3_9",
+          "type": "and",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "AND2_0",
+          "type": "and",
+          "connections": {
+            "null": "G19"
+          }
+        },
+        {
+          "name": "OR2_0",
+          "type": "or",
+          "connections": {
+            "null": "G21"
+          }
+        },
+        {
+          "name": "NAND2_1",
+          "type": "nand",
+          "connections": {
+            "null": "G25"
+          }
+        },
+        {
+          "name": "OR2_1",
+          "type": "or",
+          "connections": {
+            "null": "G25"
+          }
+        },
+        {
+          "name": "NAND2_2",
+          "type": "nand",
+          "connections": {
+            "null": "G27"
+          }
+        },
+        {
+          "name": "OR2_2",
+          "type": "or",
+          "connections": {
+            "null": "G27"
+          }
+        },
+        {
+          "name": "NAND2_3",
+          "type": "nand",
+          "connections": {
+            "null": "G29"
+          }
+        },
+        {
+          "name": "OR2_3",
+          "type": "or",
+          "connections": {
+            "null": "G29"
+          }
+        },
+        {
+          "name": "NAND2_4",
+          "type": "nand",
+          "connections": {
+            "null": "G31"
+          }
+        },
+        {
+          "name": "OR2_4",
+          "type": "or",
+          "connections": {
+            "null": "G31"
+          }
+        },
+        {
+          "name": "AND2_1",
+          "type": "and",
+          "connections": {
+            "null": "G34"
+          }
+        },
+        {
+          "name": "NOT_0",
+          "type": "not",
+          "connections": {
+            "null": "G60"
+          }
+        },
+        {
+          "name": "AND2_2",
+          "type": "and",
+          "connections": {
+            "null": "G34"
+          }
+        },
+        {
+          "name": "AND2_3",
+          "type": "and",
+          "connections": {
+            "null": "G34"
+          }
+        },
+        {
+          "name": "AND2_4",
+          "type": "and",
+          "connections": {
+            "null": "G34"
+          }
+        },
+        {
+          "name": "NAND2_5",
+          "type": "nand",
+          "connections": {
+            "null": "G40"
+          }
+        },
+        {
+          "name": "NOR2_0",
+          "type": "nor",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "AND2_5",
+          "type": "and",
+          "connections": {
+            "null": "G8"
+          }
+        },
+        {
+          "name": "NAND2_6",
+          "type": "nand",
+          "connections": {
+            "null": "G42"
+          }
+        },
+        {
+          "name": "OR2_5",
+          "type": "or",
+          "connections": {
+            "null": "G42"
+          }
+        },
+        {
+          "name": "NAND2_7",
+          "type": "nand",
+          "connections": {
+            "null": "G44"
+          }
+        },
+        {
+          "name": "OR2_6",
+          "type": "or",
+          "connections": {
+            "null": "G44"
+          }
+        },
+        {
+          "name": "NAND2_8",
+          "type": "nand",
+          "connections": {
+            "null": "G46"
+          }
+        },
+        {
+          "name": "OR2_7",
+          "type": "or",
+          "connections": {
+            "null": "G46"
+          }
+        },
+        {
+          "name": "NAND2_9",
+          "type": "nand",
+          "connections": {
+            "null": "G48"
+          }
+        },
+        {
+          "name": "OR2_8",
+          "type": "or",
+          "connections": {
+            "null": "G48"
+          }
+        },
+        {
+          "name": "AND2_6",
+          "type": "and",
+          "connections": {
+            "null": "G24"
+          }
+        },
+        {
+          "name": "AND2_7",
+          "type": "and",
+          "connections": {
+            "null": "G25"
+          }
+        },
+        {
+          "name": "AND2_8",
+          "type": "and",
+          "connections": {
+            "null": "G26"
+          }
+        },
+        {
+          "name": "AND2_9",
+          "type": "and",
+          "connections": {
+            "null": "G27"
+          }
+        },
+        {
+          "name": "AND2_10",
+          "type": "and",
+          "connections": {
+            "null": "G28"
+          }
+        },
+        {
+          "name": "AND2_11",
+          "type": "and",
+          "connections": {
+            "null": "G56"
+          }
+        },
+        {
+          "name": "AND2_12",
+          "type": "and",
+          "connections": {
+            "null": "G29"
+          }
+        },
+        {
+          "name": "AND2_13",
+          "type": "and",
+          "connections": {
+            "null": "G57"
+          }
+        },
+        {
+          "name": "AND2_14",
+          "type": "and",
+          "connections": {
+            "null": "G30"
+          }
+        },
+        {
+          "name": "AND2_15",
+          "type": "and",
+          "connections": {
+            "null": "G59"
+          }
+        },
+        {
+          "name": "NOT_1",
+          "type": "not",
+          "connections": {
+            "null": "G269"
+          }
+        },
+        {
+          "name": "NOT_2",
+          "type": "not",
+          "connections": {
+            "null": "G273"
+          }
+        },
+        {
+          "name": "OR2_9",
+          "type": "or",
+          "connections": {
+            "null": "G273"
+          }
+        },
+        {
+          "name": "NOT_3",
+          "type": "not",
+          "connections": {
+            "null": "G276"
+          }
+        },
+        {
+          "name": "NOT_4",
+          "type": "not",
+          "connections": {
+            "null": "G276"
+          }
+        },
+        {
+          "name": "NOT_5",
+          "type": "not",
+          "connections": {
+            "null": "G279"
+          }
+        },
+        {
+          "name": "NOR2_1",
+          "type": "nor",
+          "connections": {
+            "null": "G284"
+          }
+        },
+        {
+          "name": "OR2_10",
+          "type": "or",
+          "connections": {
+            "null": "G285"
+          }
+        },
+        {
+          "name": "OR2_11",
+          "type": "or",
+          "connections": {
+            "null": "G286"
+          }
+        },
+        {
+          "name": "NOT_6",
+          "type": "not",
+          "connections": {
+            "null": "G293"
+          }
+        },
+        {
+          "name": "NOT_7",
+          "type": "not",
+          "connections": {
+            "null": "G294"
+          }
+        },
+        {
+          "name": "NOT_8",
+          "type": "not",
+          "connections": {
+            "null": "G295"
+          }
+        },
+        {
+          "name": "NOT_9",
+          "type": "not",
+          "connections": {
+            "null": "G296"
+          }
+        },
+        {
+          "name": "NAND2_10",
+          "type": "nand",
+          "connections": {
+            "null": "G298"
+          }
+        },
+        {
+          "name": "AND2_16",
+          "type": "and",
+          "connections": {
+            "null": "G298"
+          }
+        },
+        {
+          "name": "NAND2_11",
+          "type": "nand",
+          "connections": {
+            "null": "G302"
+          }
+        },
+        {
+          "name": "NAND2_12",
+          "type": "nand",
+          "connections": {
+            "null": "G304"
+          }
+        },
+        {
+          "name": "NAND2_13",
+          "type": "nand",
+          "connections": {
+            "null": "G306"
+          }
+        },
+        {
+          "name": "NAND2_14",
+          "type": "nand",
+          "connections": {
+            "null": "G308"
+          }
+        },
+        {
+          "name": "NOT_10",
+          "type": "not",
+          "connections": {
+            "null": "G310"
+          }
+        },
+        {
+          "name": "NOR2_2",
+          "type": "nor",
+          "connections": {
+            "null": "G323"
+          }
+        },
+        {
+          "name": "NAND2_15",
+          "type": "nand",
+          "connections": {
+            "null": "G325"
+          }
+        },
+        {
+          "name": "NAND2_16",
+          "type": "nand",
+          "connections": {
+            "null": "G327"
+          }
+        },
+        {
+          "name": "NAND2_17",
+          "type": "nand",
+          "connections": {
+            "null": "G329"
+          }
+        },
+        {
+          "name": "NAND2_18",
+          "type": "nand",
+          "connections": {
+            "null": "G331"
+          }
+        },
+        {
+          "name": "OR2_12",
+          "type": "or",
+          "connections": {
+            "null": "G343"
+          }
+        },
+        {
+          "name": "NOT_11",
+          "type": "not",
+          "connections": {
+            "null": "G345"
+          }
+        },
+        {
+          "name": "NOT_12",
+          "type": "not",
+          "connections": {
+            "null": "G346"
+          }
+        },
+        {
+          "name": "AND2_17",
+          "type": "and",
+          "connections": {
+            "null": "G14"
+          }
+        },
+        {
+          "name": "NOT_13",
+          "type": "not",
+          "connections": {
+            "null": "G349"
+          }
+        },
+        {
+          "name": "NOT_14",
+          "type": "not",
+          "connections": {
+            "null": "G350"
+          }
+        },
+        {
+          "name": "NOT_15",
+          "type": "not",
+          "connections": {
+            "null": "G355"
+          }
+        },
+        {
+          "name": "NOT_16",
+          "type": "not",
+          "connections": {
+            "null": "G357"
+          }
+        },
+        {
+          "name": "NOT_17",
+          "type": "not",
+          "connections": {
+            "null": "G360"
+          }
+        },
+        {
+          "name": "AND2_18",
+          "type": "and",
+          "connections": {
+            "null": "G360"
+          }
+        },
+        {
+          "name": "NOT_18",
+          "type": "not",
+          "connections": {
+            "null": "G363"
+          }
+        },
+        {
+          "name": "NOT_19",
+          "type": "not",
+          "connections": {
+            "null": "G366"
+          }
+        },
+        {
+          "name": "AND2_19",
+          "type": "and",
+          "connections": {
+            "null": "G366"
+          }
+        },
+        {
+          "name": "NAND2_19",
+          "type": "nand",
+          "connections": {
+            "null": "G352"
+          }
+        },
+        {
+          "name": "NOT_20",
+          "type": "not",
+          "connections": {
+            "null": "G376"
+          }
+        },
+        {
+          "name": "NOT_21",
+          "type": "not",
+          "connections": {
+            "null": "G379"
+          }
+        },
+        {
+          "name": "AND2_20",
+          "type": "and",
+          "connections": {
+            "null": "G379"
+          }
+        },
+        {
+          "name": "NOT_22",
+          "type": "not",
+          "connections": {
+            "null": "G382"
+          }
+        },
+        {
+          "name": "NOT_23",
+          "type": "not",
+          "connections": {
+            "null": "G385"
+          }
+        },
+        {
+          "name": "AND2_21",
+          "type": "and",
+          "connections": {
+            "null": "G385"
+          }
+        },
+        {
+          "name": "AND2_22",
+          "type": "and",
+          "connections": {
+            "null": "G369"
+          }
+        },
+        {
+          "name": "NOT_24",
+          "type": "not",
+          "connections": {
+            "null": "G396"
+          }
+        },
+        {
+          "name": "AND2_23",
+          "type": "and",
+          "connections": {
+            "null": "G401"
+          }
+        },
+        {
+          "name": "AND2_24",
+          "type": "and",
+          "connections": {
+            "null": "G404"
+          }
+        },
+        {
+          "name": "AND3_10",
+          "type": "and",
+          "connections": {
+            "null": "G10"
+          }
+        },
+        {
+          "name": "AND3_11",
+          "type": "and",
+          "connections": {
+            "null": "G287"
+          }
+        },
+        {
+          "name": "NAND3_1",
+          "type": "nand",
+          "connections": {
+            "null": "G10"
+          }
+        },
+        {
+          "name": "NAND4_5",
+          "type": "nand",
+          "connections": {
+            "null": "G389"
+          }
+        },
+        {
+          "name": "NAND3_2",
+          "type": "nand",
+          "connections": {
+            "null": "G4"
+          }
+        },
+        {
+          "name": "AND2_25",
+          "type": "and",
+          "connections": {
+            "null": "G408"
+          }
+        },
+        {
+          "name": "AND2_26",
+          "type": "and",
+          "connections": {
+            "null": "G411"
+          }
+        },
+        {
+          "name": "NOT_25",
+          "type": "not",
+          "connections": {
+            "null": "G414"
+          }
+        },
+        {
+          "name": "NOR2_3",
+          "type": "nor",
+          "connections": {
+            "null": "G415"
+          }
+        },
+        {
+          "name": "NOR2_4",
+          "type": "nor",
+          "connections": {
+            "null": "G416"
+          }
+        },
+        {
+          "name": "NAND2_20",
+          "type": "nand",
+          "connections": {
+            "null": "G406"
+          }
+        },
+        {
+          "name": "AND2_27",
+          "type": "and",
+          "connections": {
+            "null": "G417"
+          }
+        },
+        {
+          "name": "AND2_28",
+          "type": "and",
+          "connections": {
+            "null": "G422"
+          }
+        },
+        {
+          "name": "AND2_29",
+          "type": "and",
+          "connections": {
+            "null": "G417"
+          }
+        },
+        {
+          "name": "AND2_30",
+          "type": "and",
+          "connections": {
+            "null": "G422"
+          }
+        },
+        {
+          "name": "AND2_31",
+          "type": "and",
+          "connections": {
+            "null": "G417"
+          }
+        },
+        {
+          "name": "AND2_32",
+          "type": "and",
+          "connections": {
+            "null": "G422"
+          }
+        },
+        {
+          "name": "AND2_33",
+          "type": "and",
+          "connections": {
+            "null": "G417"
+          }
+        },
+        {
+          "name": "AND2_34",
+          "type": "and",
+          "connections": {
+            "null": "G422"
+          }
+        },
+        {
+          "name": "NAND2_21",
+          "type": "nand",
+          "connections": {
+            "null": "G1"
+          }
+        },
+        {
+          "name": "OR2_13",
+          "type": "or",
+          "connections": {
+            "null": "G427"
+          }
+        },
+        {
+          "name": "OR2_14",
+          "type": "or",
+          "connections": {
+            "null": "G427"
+          }
+        },
+        {
+          "name": "OR2_15",
+          "type": "or",
+          "connections": {
+            "null": "G427"
+          }
+        },
+        {
+          "name": "OR2_16",
+          "type": "or",
+          "connections": {
+            "null": "G427"
+          }
+        },
+        {
+          "name": "NOR2_5",
+          "type": "nor",
+          "connections": {
+            "null": "G434"
+          }
+        },
+        {
+          "name": "NOR2_6",
+          "type": "nor",
+          "connections": {
+            "null": "G435"
+          }
+        },
+        {
+          "name": "NAND2_22",
+          "type": "nand",
+          "connections": {
+            "null": "G445"
+          }
+        },
+        {
+          "name": "OR2_17",
+          "type": "or",
+          "connections": {
+            "null": "G445"
+          }
+        },
+        {
+          "name": "NAND2_23",
+          "type": "nand",
+          "connections": {
+            "null": "G33"
+          }
+        },
+        {
+          "name": "OR2_18",
+          "type": "or",
+          "connections": {
+            "null": "G33"
+          }
+        },
+        {
+          "name": "AND2_35",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "NOR2_7",
+          "type": "nor",
+          "connections": {
+            "null": "G461"
+          }
+        },
+        {
+          "name": "AND2_36",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "NOR2_8",
+          "type": "nor",
+          "connections": {
+            "null": "G463"
+          }
+        },
+        {
+          "name": "AND2_37",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "NOR2_9",
+          "type": "nor",
+          "connections": {
+            "null": "G465"
+          }
+        },
+        {
+          "name": "AND2_38",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "NOR2_10",
+          "type": "nor",
+          "connections": {
+            "null": "G467"
+          }
+        },
+        {
+          "name": "AND2_39",
+          "type": "and",
+          "connections": {
+            "null": "G468"
+          }
+        },
+        {
+          "name": "AND2_40",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "AND2_41",
+          "type": "and",
+          "connections": {
+            "null": "G468"
+          }
+        },
+        {
+          "name": "AND2_42",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "AND2_43",
+          "type": "and",
+          "connections": {
+            "null": "G468"
+          }
+        },
+        {
+          "name": "AND2_44",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "AND2_45",
+          "type": "and",
+          "connections": {
+            "null": "G468"
+          }
+        },
+        {
+          "name": "AND2_46",
+          "type": "and",
+          "connections": {
+            "null": "G451"
+          }
+        },
+        {
+          "name": "NAND2_24",
+          "type": "nand",
+          "connections": {
+            "null": "G477"
+          }
+        },
+        {
+          "name": "OR2_19",
+          "type": "or",
+          "connections": {
+            "null": "G477"
+          }
+        },
+        {
+          "name": "NAND2_25",
+          "type": "nand",
+          "connections": {
+            "null": "G49"
+          }
+        },
+        {
+          "name": "OR2_20",
+          "type": "or",
+          "connections": {
+            "null": "G49"
+          }
+        },
+        {
+          "name": "AND2_47",
+          "type": "and",
+          "connections": {
+            "null": "G41"
+          }
+        },
+        {
+          "name": "AND2_48",
+          "type": "and",
+          "connections": {
+            "null": "G42"
+          }
+        },
+        {
+          "name": "AND2_49",
+          "type": "and",
+          "connections": {
+            "null": "G43"
+          }
+        },
+        {
+          "name": "AND2_50",
+          "type": "and",
+          "connections": {
+            "null": "G44"
+          }
+        },
+        {
+          "name": "AND2_51",
+          "type": "and",
+          "connections": {
+            "null": "G45"
+          }
+        },
+        {
+          "name": "NAND2_26",
+          "type": "nand",
+          "connections": {
+            "null": "G46"
+          }
+        },
+        {
+          "name": "NAND2_27",
+          "type": "nand",
+          "connections": {
+            "null": "G47"
+          }
+        },
+        {
+          "name": "NAND2_28",
+          "type": "nand",
+          "connections": {
+            "null": "G48"
+          }
+        },
+        {
+          "name": "NAND2_29",
+          "type": "nand",
+          "connections": {
+            "null": "G484"
+          }
+        },
+        {
+          "name": "NAND2_30",
+          "type": "nand",
+          "connections": {
+            "null": "G486"
+          }
+        },
+        {
+          "name": "NOR2_11",
+          "type": "nor",
+          "connections": {
+            "null": "G487"
+          }
+        },
+        {
+          "name": "NOR2_12",
+          "type": "nor",
+          "connections": {
+            "null": "G489"
+          }
+        },
+        {
+          "name": "NOR2_13",
+          "type": "nor",
+          "connections": {
+            "null": "G491"
+          }
+        },
+        {
+          "name": "NOR2_14",
+          "type": "nor",
+          "connections": {
+            "null": "G493"
+          }
+        },
+        {
+          "name": "NOR2_15",
+          "type": "nor",
+          "connections": {
+            "null": "G496"
+          }
+        },
+        {
+          "name": "NOR2_16",
+          "type": "nor",
+          "connections": {
+            "null": "G498"
+          }
+        },
+        {
+          "name": "NOR2_17",
+          "type": "nor",
+          "connections": {
+            "null": "G500"
+          }
+        },
+        {
+          "name": "NOR2_18",
+          "type": "nor",
+          "connections": {
+            "null": "G502"
+          }
+        },
+        {
+          "name": "NAND2_31",
+          "type": "nand",
+          "connections": {
+            "null": "G504"
+          }
+        },
+        {
+          "name": "NAND2_32",
+          "type": "nand",
+          "connections": {
+            "null": "G506"
+          }
+        },
+        {
+          "name": "NOT_26",
+          "type": "not",
+          "connections": {
+            "null": "G515"
+          }
+        },
+        {
+          "name": "NOT_27",
+          "type": "not",
+          "connections": {
+            "null": "G518"
+          }
+        },
+        {
+          "name": "AND2_52",
+          "type": "and",
+          "connections": {
+            "null": "G518"
+          }
+        },
+        {
+          "name": "NAND2_33",
+          "type": "nand",
+          "connections": {
+            "null": "G488"
+          }
+        },
+        {
+          "name": "NAND2_34",
+          "type": "nand",
+          "connections": {
+            "null": "G490"
+          }
+        },
+        {
+          "name": "NAND2_35",
+          "type": "nand",
+          "connections": {
+            "null": "G492"
+          }
+        },
+        {
+          "name": "NAND2_36",
+          "type": "nand",
+          "connections": {
+            "null": "G494"
+          }
+        },
+        {
+          "name": "NAND2_37",
+          "type": "nand",
+          "connections": {
+            "null": "G525"
+          }
+        },
+        {
+          "name": "NAND2_38",
+          "type": "nand",
+          "connections": {
+            "null": "G526"
+          }
+        },
+        {
+          "name": "NAND2_39",
+          "type": "nand",
+          "connections": {
+            "null": "G527"
+          }
+        },
+        {
+          "name": "NAND2_40",
+          "type": "nand",
+          "connections": {
+            "null": "G528"
+          }
+        },
+        {
+          "name": "NOT_28",
+          "type": "not",
+          "connections": {
+            "null": "G529"
+          }
+        },
+        {
+          "name": "NOT_29",
+          "type": "not",
+          "connections": {
+            "null": "G532"
+          }
+        },
+        {
+          "name": "AND2_53",
+          "type": "and",
+          "connections": {
+            "null": "G532"
+          }
+        },
+        {
+          "name": "AND2_54",
+          "type": "and",
+          "connections": {
+            "null": "G536"
+          }
+        },
+        {
+          "name": "AND2_55",
+          "type": "and",
+          "connections": {
+            "null": "G571"
+          }
+        },
+        {
+          "name": "NAND2_41",
+          "type": "nand",
+          "connections": {
+            "null": "G41"
+          }
+        },
+        {
+          "name": "OR2_21",
+          "type": "or",
+          "connections": {
+            "null": "G41"
+          }
+        },
+        {
+          "name": "AND2_56",
+          "type": "and",
+          "connections": {
+            "null": "G538"
+          }
+        },
+        {
+          "name": "NAND2_42",
+          "type": "nand",
+          "connections": {
+            "null": "G42"
+          }
+        },
+        {
+          "name": "OR2_22",
+          "type": "or",
+          "connections": {
+            "null": "G42"
+          }
+        },
+        {
+          "name": "AND2_57",
+          "type": "and",
+          "connections": {
+            "null": "G542"
+          }
+        },
+        {
+          "name": "NAND2_43",
+          "type": "nand",
+          "connections": {
+            "null": "G43"
+          }
+        },
+        {
+          "name": "OR2_23",
+          "type": "or",
+          "connections": {
+            "null": "G43"
+          }
+        },
+        {
+          "name": "AND2_58",
+          "type": "and",
+          "connections": {
+            "null": "G546"
+          }
+        },
+        {
+          "name": "NAND2_44",
+          "type": "nand",
+          "connections": {
+            "null": "G44"
+          }
+        },
+        {
+          "name": "OR2_24",
+          "type": "or",
+          "connections": {
+            "null": "G44"
+          }
+        },
+        {
+          "name": "AND2_59",
+          "type": "and",
+          "connections": {
+            "null": "G550"
+          }
+        },
+        {
+          "name": "NAND2_45",
+          "type": "nand",
+          "connections": {
+            "null": "G45"
+          }
+        },
+        {
+          "name": "OR2_25",
+          "type": "or",
+          "connections": {
+            "null": "G45"
+          }
+        },
+        {
+          "name": "AND2_60",
+          "type": "and",
+          "connections": {
+            "null": "G554"
+          }
+        },
+        {
+          "name": "NAND2_46",
+          "type": "nand",
+          "connections": {
+            "null": "G46"
+          }
+        },
+        {
+          "name": "OR2_26",
+          "type": "or",
+          "connections": {
+            "null": "G46"
+          }
+        },
+        {
+          "name": "AND2_61",
+          "type": "and",
+          "connections": {
+            "null": "G558"
+          }
+        },
+        {
+          "name": "NAND2_47",
+          "type": "nand",
+          "connections": {
+            "null": "G47"
+          }
+        },
+        {
+          "name": "OR2_27",
+          "type": "or",
+          "connections": {
+            "null": "G47"
+          }
+        },
+        {
+          "name": "AND2_62",
+          "type": "and",
+          "connections": {
+            "null": "G562"
+          }
+        },
+        {
+          "name": "NAND2_48",
+          "type": "nand",
+          "connections": {
+            "null": "G48"
+          }
+        },
+        {
+          "name": "OR2_28",
+          "type": "or",
+          "connections": {
+            "null": "G48"
+          }
+        },
+        {
+          "name": "AND2_63",
+          "type": "and",
+          "connections": {
+            "null": "G566"
+          }
+        },
+        {
+          "name": "NOR2_19",
+          "type": "nor",
+          "connections": {
+            "null": "G573"
+          }
+        },
+        {
+          "name": "NOR2_20",
+          "type": "nor",
+          "connections": {
+            "null": "G574"
+          }
+        },
+        {
+          "name": "NOT_30",
+          "type": "not",
+          "connections": {
+            "null": "G575"
+          }
+        },
+        {
+          "name": "AND2_64",
+          "type": "and",
+          "connections": {
+            "null": "G575"
+          }
+        },
+        {
+          "name": "NOR2_21",
+          "type": "nor",
+          "connections": {
+            "null": "G507"
+          }
+        },
+        {
+          "name": "NOT_31",
+          "type": "not",
+          "connections": {
+            "null": "G582"
+          }
+        },
+        {
+          "name": "AND2_65",
+          "type": "and",
+          "connections": {
+            "null": "G582"
+          }
+        },
+        {
+          "name": "NOR2_22",
+          "type": "nor",
+          "connections": {
+            "null": "G508"
+          }
+        },
+        {
+          "name": "NOT_32",
+          "type": "not",
+          "connections": {
+            "null": "G591"
+          }
+        },
+        {
+          "name": "AND2_66",
+          "type": "and",
+          "connections": {
+            "null": "G591"
+          }
+        },
+        {
+          "name": "NOR2_23",
+          "type": "nor",
+          "connections": {
+            "null": "G509"
+          }
+        },
+        {
+          "name": "NOT_33",
+          "type": "not",
+          "connections": {
+            "null": "G601"
+          }
+        },
+        {
+          "name": "AND2_67",
+          "type": "and",
+          "connections": {
+            "null": "G601"
+          }
+        },
+        {
+          "name": "NOR2_24",
+          "type": "nor",
+          "connections": {
+            "null": "G510"
+          }
+        },
+        {
+          "name": "NOT_34",
+          "type": "not",
+          "connections": {
+            "null": "G610"
+          }
+        },
+        {
+          "name": "AND2_68",
+          "type": "and",
+          "connections": {
+            "null": "G610"
+          }
+        },
+        {
+          "name": "NOR2_25",
+          "type": "nor",
+          "connections": {
+            "null": "G511"
+          }
+        },
+        {
+          "name": "NOT_35",
+          "type": "not",
+          "connections": {
+            "null": "G617"
+          }
+        },
+        {
+          "name": "AND2_69",
+          "type": "and",
+          "connections": {
+            "null": "G617"
+          }
+        },
+        {
+          "name": "NOR2_26",
+          "type": "nor",
+          "connections": {
+            "null": "G625"
+          }
+        },
+        {
+          "name": "NOT_36",
+          "type": "not",
+          "connections": {
+            "null": "G626"
+          }
+        },
+        {
+          "name": "AND2_70",
+          "type": "and",
+          "connections": {
+            "null": "G626"
+          }
+        },
+        {
+          "name": "NOR2_27",
+          "type": "nor",
+          "connections": {
+            "null": "G635"
+          }
+        },
+        {
+          "name": "NOT_37",
+          "type": "not",
+          "connections": {
+            "null": "G636"
+          }
+        },
+        {
+          "name": "AND2_71",
+          "type": "and",
+          "connections": {
+            "null": "G636"
+          }
+        },
+        {
+          "name": "NOR2_28",
+          "type": "nor",
+          "connections": {
+            "null": "G644"
+          }
+        },
+        {
+          "name": "NAND2_49",
+          "type": "nand",
+          "connections": {
+            "null": "G58"
+          }
+        },
+        {
+          "name": "NAND3_3",
+          "type": "nand",
+          "connections": {
+            "null": "G58"
+          }
+        },
+        {
+          "name": "NAND4_6",
+          "type": "nand",
+          "connections": {
+            "null": "G58"
+          }
+        },
+        {
+          "name": "NOT_38",
+          "type": "not",
+          "connections": {
+            "null": "G647"
+          }
+        },
+        {
+          "name": "AND2_72",
+          "type": "and",
+          "connections": {
+            "null": "G650"
+          }
+        },
+        {
+          "name": "AND2_73",
+          "type": "and",
+          "connections": {
+            "null": "G647"
+          }
+        },
+        {
+          "name": "NOT_39",
+          "type": "not",
+          "connections": {
+            "null": "G655"
+          }
+        },
+        {
+          "name": "AND2_74",
+          "type": "and",
+          "connections": {
+            "null": "G658"
+          }
+        },
+        {
+          "name": "AND2_75",
+          "type": "and",
+          "connections": {
+            "null": "G655"
+          }
+        },
+        {
+          "name": "NOT_40",
+          "type": "not",
+          "connections": {
+            "null": "G663"
+          }
+        },
+        {
+          "name": "AND2_76",
+          "type": "and",
+          "connections": {
+            "null": "G667"
+          }
+        },
+        {
+          "name": "AND2_77",
+          "type": "and",
+          "connections": {
+            "null": "G663"
+          }
+        },
+        {
+          "name": "NOT_41",
+          "type": "not",
+          "connections": {
+            "null": "G672"
+          }
+        },
+        {
+          "name": "AND2_78",
+          "type": "and",
+          "connections": {
+            "null": "G677"
+          }
+        },
+        {
+          "name": "AND2_79",
+          "type": "and",
+          "connections": {
+            "null": "G672"
+          }
+        },
+        {
+          "name": "NOT_42",
+          "type": "not",
+          "connections": {
+            "null": "G682"
+          }
+        },
+        {
+          "name": "AND2_80",
+          "type": "and",
+          "connections": {
+            "null": "G685"
+          }
+        },
+        {
+          "name": "AND2_81",
+          "type": "and",
+          "connections": {
+            "null": "G682"
+          }
+        },
+        {
+          "name": "NOT_43",
+          "type": "not",
+          "connections": {
+            "null": "G690"
+          }
+        },
+        {
+          "name": "AND2_82",
+          "type": "and",
+          "connections": {
+            "null": "G693"
+          }
+        },
+        {
+          "name": "AND2_83",
+          "type": "and",
+          "connections": {
+            "null": "G690"
+          }
+        },
+        {
+          "name": "NOT_44",
+          "type": "not",
+          "connections": {
+            "null": "G698"
+          }
+        },
+        {
+          "name": "AND2_84",
+          "type": "and",
+          "connections": {
+            "null": "G702"
+          }
+        },
+        {
+          "name": "AND2_85",
+          "type": "and",
+          "connections": {
+            "null": "G698"
+          }
+        },
+        {
+          "name": "NOT_45",
+          "type": "not",
+          "connections": {
+            "null": "G707"
+          }
+        },
+        {
+          "name": "NOR2_29",
+          "type": "nor",
+          "connections": {
+            "null": "G58"
+          }
+        },
+        {
+          "name": "AND2_86",
+          "type": "and",
+          "connections": {
+            "null": "G58"
+          }
+        },
+        {
+          "name": "AND2_87",
+          "type": "and",
+          "connections": {
+            "null": "G712"
+          }
+        },
+        {
+          "name": "AND2_88",
+          "type": "and",
+          "connections": {
+            "null": "G707"
+          }
+        },
+        {
+          "name": "NAND2_50",
+          "type": "nand",
+          "connections": {
+            "null": "G707"
+          }
+        },
+        {
+          "name": "NAND2_51",
+          "type": "nand",
+          "connections": {
+            "null": "G698"
+          }
+        },
+        {
+          "name": "NAND3_4",
+          "type": "nand",
+          "connections": {
+            "null": "G707"
+          }
+        },
+        {
+          "name": "NAND2_52",
+          "type": "nand",
+          "connections": {
+            "null": "G672"
+          }
+        },
+        {
+          "name": "NAND2_53",
+          "type": "nand",
+          "connections": {
+            "null": "G663"
+          }
+        },
+        {
+          "name": "NAND3_5",
+          "type": "nand",
+          "connections": {
+            "null": "G672"
+          }
+        },
+        {
+          "name": "NOR2_30",
+          "type": "nor",
+          "connections": {
+            "null": "G722"
+          }
+        },
+        {
+          "name": "NOR2_31",
+          "type": "nor",
+          "connections": {
+            "null": "G725"
+          }
+        },
+        {
+          "name": "NOR2_32",
+          "type": "nor",
+          "connections": {
+            "null": "G728"
+          }
+        },
+        {
+          "name": "NOR2_33",
+          "type": "nor",
+          "connections": {
+            "null": "G731"
+          }
+        },
+        {
+          "name": "NAND4_7",
+          "type": "nand",
+          "connections": {
+            "null": "G719"
+          }
+        },
+        {
+          "name": "NOR2_34",
+          "type": "nor",
+          "connections": {
+            "null": "G734"
+          }
+        },
+        {
+          "name": "NAND3_6",
+          "type": "nand",
+          "connections": {
+            "null": "G718"
+          }
+        },
+        {
+          "name": "NOR2_35",
+          "type": "nor",
+          "connections": {
+            "null": "G737"
+          }
+        },
+        {
+          "name": "NAND2_54",
+          "type": "nand",
+          "connections": {
+            "null": "G717"
+          }
+        },
+        {
+          "name": "NOR2_36",
+          "type": "nor",
+          "connections": {
+            "null": "G740"
+          }
+        },
+        {
+          "name": "NOR2_37",
+          "type": "nor",
+          "connections": {
+            "null": "G743"
+          }
+        },
+        {
+          "name": "NOR2_38",
+          "type": "nor",
+          "connections": {
+            "null": "G745"
+          }
+        },
+        {
+          "name": "NOR2_39",
+          "type": "nor",
+          "connections": {
+            "null": "G756"
+          }
+        },
+        {
+          "name": "AND2_89",
+          "type": "and",
+          "connections": {
+            "null": "G756"
+          }
+        },
+        {
+          "name": "NOR2_40",
+          "type": "nor",
+          "connections": {
+            "null": "G761"
+          }
+        },
+        {
+          "name": "AND2_90",
+          "type": "and",
+          "connections": {
+            "null": "G761"
+          }
+        },
+        {
+          "name": "NOR2_41",
+          "type": "nor",
+          "connections": {
+            "null": "G765"
+          }
+        },
+        {
+          "name": "AND2_91",
+          "type": "and",
+          "connections": {
+            "null": "G765"
+          }
+        },
+        {
+          "name": "AND2_92",
+          "type": "and",
+          "connections": {
+            "null": "G769"
+          }
+        },
+        {
+          "name": "NAND2_55",
+          "type": "nand",
+          "connections": {
+            "null": "G756"
+          }
+        },
+        {
+          "name": "NAND2_56",
+          "type": "nand",
+          "connections": {
+            "null": "G732"
+          }
+        },
+        {
+          "name": "NOR2_42",
+          "type": "nor",
+          "connections": {
+            "null": "G772"
+          }
+        },
+        {
+          "name": "NOR2_43",
+          "type": "nor",
+          "connections": {
+            "null": "G774"
+          }
+        },
+        {
+          "name": "NOR2_44",
+          "type": "nor",
+          "connections": {
+            "null": "G776"
+          }
+        },
+        {
+          "name": "NOR2_45",
+          "type": "nor",
+          "connections": {
+            "null": "G777"
+          }
+        },
+        {
+          "name": "NOR2_46",
+          "type": "nor",
+          "connections": {
+            "null": "G779"
+          }
+        },
+        {
+          "name": "AND2_93",
+          "type": "and",
+          "connections": {
+            "null": "G779"
+          }
+        },
+        {
+          "name": "AND2_94",
+          "type": "and",
+          "connections": {
+            "null": "G785"
+          }
+        },
+        {
+          "name": "AND2_95",
+          "type": "and",
+          "connections": {
+            "null": "G786"
+          }
+        },
+        {
+          "name": "AND2_96",
+          "type": "and",
+          "connections": {
+            "null": "G787"
+          }
+        },
+        {
+          "name": "NAND4_8",
+          "type": "nand",
+          "connections": {
+            "null": "G514"
+          }
+        },
+        {
+          "name": "NAND2_57",
+          "type": "nand",
+          "connections": {
+            "null": "G779"
+          }
+        },
+        {
+          "name": "NAND3_7",
+          "type": "nand",
+          "connections": {
+            "null": "G779"
+          }
+        },
+        {
+          "name": "NAND4_9",
+          "type": "nand",
+          "connections": {
+            "null": "G779"
+          }
+        },
+        {
+          "name": "NAND4_10",
+          "type": "nand",
+          "connections": {
+            "null": "G797"
+          }
+        },
+        {
+          "name": "NAND3_8",
+          "type": "nand",
+          "connections": {
+            "null": "G796"
+          }
+        },
+        {
+          "name": "NAND2_58",
+          "type": "nand",
+          "connections": {
+            "null": "G795"
+          }
+        },
+        {
+          "name": "NOR2_47",
+          "type": "nor",
+          "connections": {
+            "null": "G790"
+          }
+        },
+        {
+          "name": "NOR2_48",
+          "type": "nor",
+          "connections": {
+            "null": "G791"
+          }
+        },
+        {
+          "name": "NOR2_49",
+          "type": "nor",
+          "connections": {
+            "null": "G792"
+          }
+        },
+        {
+          "name": "NOR2_50",
+          "type": "nor",
+          "connections": {
+            "null": "G793"
+          }
+        },
+        {
+          "name": "NOT_46",
+          "type": "not",
+          "connections": {
+            "null": "G794"
+          }
+        },
+        {
+          "name": "NOR2_51",
+          "type": "nor",
+          "connections": {
+            "null": "G798"
+          }
+        },
+        {
+          "name": "AND2_97",
+          "type": "and",
+          "connections": {
+            "null": "G798"
+          }
+        },
+        {
+          "name": "NOR2_52",
+          "type": "nor",
+          "connections": {
+            "null": "G802"
+          }
+        },
+        {
+          "name": "AND2_98",
+          "type": "and",
+          "connections": {
+            "null": "G802"
+          }
+        },
+        {
+          "name": "NOR2_53",
+          "type": "nor",
+          "connections": {
+            "null": "G805"
+          }
+        },
+        {
+          "name": "AND2_99",
+          "type": "and",
+          "connections": {
+            "null": "G805"
+          }
+        },
+        {
+          "name": "AND2_100",
+          "type": "and",
+          "connections": {
+            "null": "G808"
+          }
+        },
+        {
+          "name": "NAND3_9",
+          "type": "nand",
+          "connections": {
+            "null": "G689"
+          }
+        },
+        {
+          "name": "NAND4_11",
+          "type": "nand",
+          "connections": {
+            "null": "G512"
+          }
+        },
+        {
+          "name": "NAND4_12",
+          "type": "nand",
+          "connections": {
+            "null": "G513"
+          }
+        },
+        {
+          "name": "NOT_47",
+          "type": "not",
+          "connections": {
+            "null": "G812"
+          }
+        },
+        {
+          "name": "NAND2_59",
+          "type": "nand",
+          "connections": {
+            "null": "G578"
+          }
+        },
+        {
+          "name": "NOR2_54",
+          "type": "nor",
+          "connections": {
+            "null": "G814"
+          }
+        },
+        {
+          "name": "NOR2_55",
+          "type": "nor",
+          "connections": {
+            "null": "G816"
+          }
+        },
+        {
+          "name": "NOR2_56",
+          "type": "nor",
+          "connections": {
+            "null": "G818"
+          }
+        },
+        {
+          "name": "NOR2_57",
+          "type": "nor",
+          "connections": {
+            "null": "G819"
+          }
+        },
+        {
+          "name": "NOT_48",
+          "type": "not",
+          "connections": {
+            "null": "G820"
+          }
+        },
+        {
+          "name": "NOT_49",
+          "type": "not",
+          "connections": {
+            "null": "G821"
+          }
+        },
+        {
+          "name": "NOT_50",
+          "type": "not",
+          "connections": {
+            "null": "G822"
+          }
+        },
+        {
+          "name": "AND2_101",
+          "type": "and",
+          "connections": {
+            "null": "G824"
+          }
+        },
+        {
+          "name": "AND2_102",
+          "type": "and",
+          "connections": {
+            "null": "G825"
+          }
+        },
+        {
+          "name": "AND2_103",
+          "type": "and",
+          "connections": {
+            "null": "G826"
+          }
+        },
+        {
+          "name": "AND2_104",
+          "type": "and",
+          "connections": {
+            "null": "G827"
+          }
+        },
+        {
+          "name": "NAND3_10",
+          "type": "nand",
+          "connections": {
+            "null": "G681"
+          }
+        },
+        {
+          "name": "NOT_51",
+          "type": "not",
+          "connections": {
+            "null": "G829"
+          }
+        },
+        {
+          "name": "NOT_52",
+          "type": "not",
+          "connections": {
+            "null": "G830"
+          }
+        },
+        {
+          "name": "NOT_53",
+          "type": "not",
+          "connections": {
+            "null": "G831"
+          }
+        },
+        {
+          "name": "NOT_54",
+          "type": "not",
+          "connections": {
+            "null": "G832"
+          }
+        },
+        {
+          "name": "NOR2_58",
+          "type": "nor",
+          "connections": {
+            "null": "G833"
+          }
+        },
+        {
+          "name": "NOR2_59",
+          "type": "nor",
+          "connections": {
+            "null": "G834"
+          }
+        },
+        {
+          "name": "NOR2_60",
+          "type": "nor",
+          "connections": {
+            "null": "G835"
+          }
+        },
+        {
+          "name": "NOT_55",
+          "type": "not",
+          "connections": {
+            "null": "G836"
+          }
+        },
+        {
+          "name": "NAND3_11",
+          "type": "nand",
+          "connections": {
+            "null": "G654"
+          }
+        },
+        {
+          "name": "NAND3_12",
+          "type": "nand",
+          "connections": {
+            "null": "G662"
+          }
+        },
+        {
+          "name": "NAND3_13",
+          "type": "nand",
+          "connections": {
+            "null": "G671"
+          }
+        },
+        {
+          "name": "NOT_56",
+          "type": "not",
+          "connections": {
+            "null": "G844"
+          }
+        },
+        {
+          "name": "NOT_57",
+          "type": "not",
+          "connections": {
+            "null": "G845"
+          }
+        },
+        {
+          "name": "NOT_58",
+          "type": "not",
+          "connections": {
+            "null": "G846"
+          }
+        },
+        {
+          "name": "NOT_59",
+          "type": "not",
+          "connections": {
+            "null": "G847"
+          }
+        },
+        {
+          "name": "NOT_60",
+          "type": "not",
+          "connections": {
+            "null": "G849"
+          }
+        },
+        {
+          "name": "NOT_61",
+          "type": "not",
+          "connections": {
+            "null": "G850"
+          }
+        },
+        {
+          "name": "NOT_62",
+          "type": "not",
+          "connections": {
+            "null": "G851"
+          }
+        },
+        {
+          "name": "NOT_63",
+          "type": "not",
+          "connections": {
+            "null": "G290"
+          }
+        },
+        {
+          "name": "NOT_64",
+          "type": "not",
+          "connections": {
+            "null": "G291"
+          }
+        },
+        {
+          "name": "NOT_65",
+          "type": "not",
+          "connections": {
+            "null": "G292"
+          }
+        },
+        {
+          "name": "NOT_66",
+          "type": "not",
+          "connections": {
+            "null": "G297"
+          }
+        },
+        {
+          "name": "NOT_67",
+          "type": "not",
+          "connections": {
+            "null": "G342"
+          }
+        },
+        {
+          "name": "NOT_68",
+          "type": "not",
+          "connections": {
+            "null": "G344"
+          }
+        },
+        {
+          "name": "NOT_69",
+          "type": "not",
+          "connections": {
+            "null": "G351"
+          }
+        },
+        {
+          "name": "NOT_70",
+          "type": "not",
+          "connections": {
+            "null": "G353"
+          }
+        },
+        {
+          "name": "NOT_71",
+          "type": "not",
+          "connections": {
+            "null": "G354"
+          }
+        },
+        {
+          "name": "NOT_72",
+          "type": "not",
+          "connections": {
+            "null": "G356"
+          }
+        },
+        {
+          "name": "NOT_73",
+          "type": "not",
+          "connections": {
+            "null": "G388"
+          }
+        },
+        {
+          "name": "NOT_74",
+          "type": "not",
+          "connections": {
+            "null": "G395"
+          }
+        },
+        {
+          "name": "NOT_75",
+          "type": "not",
+          "connections": {
+            "null": "G397"
+          }
+        },
+        {
+          "name": "NOT_76",
+          "type": "not",
+          "connections": {
+            "null": "G398"
+          }
+        },
+        {
+          "name": "NOT_77",
+          "type": "not",
+          "connections": {
+            "null": "G399"
+          }
+        },
+        {
+          "name": "NOT_78",
+          "type": "not",
+          "connections": {
+            "null": "G645"
+          }
+        },
+        {
+          "name": "NOT_79",
+          "type": "not",
+          "connections": {
+            "null": "G646"
+          }
+        },
+        {
+          "name": "NOT_80",
+          "type": "not",
+          "connections": {
+            "null": "G823"
+          }
+        },
+        {
+          "name": "NOT_81",
+          "type": "not",
+          "connections": {
+            "null": "G837"
+          }
+        },
+        {
+          "name": "NOT_82",
+          "type": "not",
+          "connections": {
+            "null": "G838"
+          }
+        },
+        {
+          "name": "NOT_83",
+          "type": "not",
+          "connections": {
+            "null": "G839"
+          }
+        },
+        {
+          "name": "NOT_84",
+          "type": "not",
+          "connections": {
+            "null": "G840"
+          }
+        },
+        {
+          "name": "NOT_85",
+          "type": "not",
+          "connections": {
+            "null": "G848"
+          }
+        },
+        {
+          "name": "NOT_86",
+          "type": "not",
+          "connections": {
+            "null": "G852"
+          }
+        },
+        {
+          "name": "NOT_87",
+          "type": "not",
+          "connections": {
+            "null": "G853"
+          }
+        },
+        {
+          "name": "NOT_88",
+          "type": "not",
+          "connections": {
+            "null": "G854"
+          }
+        }
+      ]
     }
   }
 }

@@ -77,7 +77,10 @@ class CombinationalSimulator:
         Se fault=True, injeta a falha no sinal fault_port, forçando um valor:
         - Se fault_port é uma porta de entrada: força o valor oposto.
         - Se fault_port é uma porta de saída: usa 'force' para fixar o valor a 0.
-        - Se fault_port não é declarado externamente, assume-se que é um net interno e usa referência hierárquica (ex.: uut.N11).
+        - Se fault_port é uma porta de gate (ex.: AND3_0): força a porta de saída (assumindo "Y")
+          a 0.
+        - Se fault_port não é declarado externamente, assume-se que é um net interno e usa
+          referência hierárquica (ex.: uut.N11).
         """
         tb_lines = []
         tb_lines.append("`timescale 1ns/1ps")
@@ -105,10 +108,16 @@ class CombinationalSimulator:
                 forced = 0 if original == 1 else 1
                 tb_lines.append(f"    {fault_port} = {forced};  // Falha em porta de entrada: força valor oposto")
             elif fault_port in self.output_ports:
-                # Para saídas: força diretamente o valor (0, por exemplo)
+                # Para saídas: força diretamente o valor 0
                 tb_lines.append(f"    force {fault_port} = 0;  // Falha em porta de saída: força valor 0")
+                
+                
+            elif hasattr(self, "gate_ports") and fault_port in self.gate_ports: # isso aqui ainda não funciona
+                tb_lines.append(f"    force uut.{fault_port} = 0;  // Falha em porta de gate: força saída a 0")
+                
+                
             else:
-                # Sinal interno: utiliza referência hierárquica para acessar o net dentro da instância
+                # Sinal interno: utiliza referência hierárquica
                 tb_lines.append(f"    force uut.{fault_port} = 0;  // Falha em net interno: força valor 0")
         tb_lines.append("    #10;")
         # Imprime as saídas usando $display (formato: OUTPUT: <sinal> = <valor>)
@@ -120,6 +129,8 @@ class CombinationalSimulator:
         with open(tb_filename, "w") as f:
             f.write("\n".join(tb_lines))
         print(f"Testbench gerado em {tb_filename}")
+
+
 
 
 

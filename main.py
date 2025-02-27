@@ -18,9 +18,9 @@ import time as t
 
 def main():
     # Configurações fixas
-    DESIGN_VERILOG = "verilog/c6288.v"
-    FAULT_PORT = "G6"  # Porta fixa para injeção de falha
-    NUM_SIMULATIONS = 1000
+    DESIGN_VERILOG = "verilog/c880.v"
+    FAULT_PORT = "G1"  # Porta fixa para injeção de falha
+    NUM_SIMULATIONS = 10
 
     # Etapa 1: Extração da netlist
     print("Extraindo estrutura do design...")
@@ -85,10 +85,10 @@ def main():
     
     # salvar no csv
     # nome_arquivo, tempo_execucao, num_portas, num_entradas_saidas, taxa_deteccao
-    taxa_deteccao = detected_count/NUM_SIMULATIONS
-    num_portas, num_entradas, num_saidas = simulator.get_infos()
-    salvar_dados_csv(DESIGN_VERILOG, tempo_execucao, NUM_SIMULATIONS, num_entradas, num_saidas, taxa_deteccao, FAULT_PORT)
-    gerar_tabela_csv("data/resultados_simulacao.csv")
+    #taxa_deteccao = detected_count/NUM_SIMULATIONS
+    #num_portas, num_entradas, num_saidas = simulator.get_infos()
+    #salvar_dados_csv(DESIGN_VERILOG, tempo_execucao, NUM_SIMULATIONS, num_entradas, num_saidas, taxa_deteccao, FAULT_PORT)
+    #gerar_tabela_csv("data/resultados_simulacao.csv")
     
 
 if __name__ == "__main__":
