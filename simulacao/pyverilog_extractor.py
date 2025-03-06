@@ -3,34 +3,34 @@
 pyverilog_extractor.py
 
 Extrai a AST do código Verilog usando Pyverilog e organiza informações dos módulos,
-portas (inputs, outputs e inouts), conexões e gates em um dicionário.
-salva essa estrutura em um arquivo JSON para análises futuras.
+portas (inputs, outputs e inouts), wires, conexões e gates em um dicionário.
+Salva essa estrutura em um arquivo JSON para análises futuras.
 """
 
 import json
 from pyverilog.vparser.parser import parse
-import pyverilog.vparser.ast as vast # manipular os nos 
+import pyverilog.vparser.ast as vast  # manipular os nós
 
 class VerilogExtractor:
     def __init__(self):
         self.structure = {}
 
     def extract(self, verilog_file):
-        #extrai a AST do arquivo Verilog e organiza a estrutura em um dicionário.
+        # Extrai a AST do arquivo Verilog e organiza a estrutura em um dicionário.
         ast_root, _ = parse([verilog_file])
         modules_info = {}
 
-        # lista de nomes dos gates primitivos
+        # Lista de nomes dos gates primitivos
         gate_primitives = {"and", "nand", "or", "nor", "not", "buf", "xor", "xnor"}
 
         for module in ast_root.description.definitions:
             if isinstance(module, vast.ModuleDef):
                 mod_name = module.name
-                mod_info = {"ports": {}, "connections": [], "gates": []}
+                mod_info = {"ports": {}, "wires": {}, "connections": [], "gates": []}
 
                 # Inicializa as portas com os nomes listados na portlist (se houver)
                 if module.portlist:
-                    # "ioport" é o nó que pode encapsular a declaração da porta e "inner" se refere ao nó interno (acessado por port.first) que possui as informações efetivas da porta.
+                    # "ioport" é o nó que pode encapsular a declaração da porta e "inner" se refere ao nó interno
                     for port in module.portlist.ports:
                         # Se for Ioport, ele já contém a definição
                         if isinstance(port, vast.Ioport) and hasattr(port.first, 'name'):
@@ -39,10 +39,11 @@ class VerilogExtractor:
                         elif isinstance(port, vast.Port) and hasattr(port, 'name'):
                             mod_info["ports"][port.name] = {"direction": None, "width": 1}
 
-                # Percorre as declarações para identificar o tipo das portas
+                # Percorre as declarações para identificar o tipo das portas e wires
                 for item in module.items:
                     if isinstance(item, vast.Decl):
                         for decl in item.list:
+                            # Extração de portas: inputs, outputs e inouts
                             if isinstance(decl, (vast.Input, vast.Output, vast.Inout)) and hasattr(decl, 'name'):
                                 width = 1
                                 if decl.width:
@@ -56,6 +57,17 @@ class VerilogExtractor:
                                              else "output" if isinstance(decl, vast.Output)
                                              else "inout")
                                 mod_info["ports"][decl.name] = {"direction": direction, "width": width}
+                            # Extração de wires: nets internos não declarados como porta
+                            elif isinstance(decl, vast.Wire) and hasattr(decl, 'name'):
+                                width = 1
+                                if decl.width:
+                                    try:
+                                        msb = int(decl.width.msb.value)
+                                        lsb = int(decl.width.lsb.value)
+                                        width = abs(msb - lsb) + 1
+                                    except Exception:
+                                        width = 1
+                                mod_info["wires"][decl.name] = {"width": width}
 
                     # Extração de instâncias de gates
                     if isinstance(item, vast.InstanceList):

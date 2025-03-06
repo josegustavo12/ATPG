@@ -41,21 +41,55 @@ class CombinationalSimulator:
         self.module_name = module_name
         self.module = modules_dict[module_name]
         
-        
         # Extrai portas de entrada e saída a partir da netlist
         self.input_ports = []
         self.output_ports = []
         for port_name, info in self.module.get("ports", {}).items():
-            dir = info.get("direction", "").lower()
-            if dir == "input":
+            direc = info.get("direction", "").lower()
+            if direc == "input":
                 self.input_ports.append(port_name)
-            elif dir == "output":
+            elif direc == "output":
                 self.output_ports.append(port_name)
         if not self.input_ports or not self.output_ports:
             print("Aviso: Não foram encontradas portas de entrada ou saída na netlist extraída.")
         print(f"Entradas detectadas: {self.input_ports}")
         print(f"Saídas detectadas: {self.output_ports}")
-
+        
+        # Extrai os nomes dos gates, se disponíveis, e mapeia para o net de saída
+        self.gate_ports = []
+        self.gate_mapping = {}
+        if "gates" in self.module:
+            for gate in self.module["gates"]:
+                if "name" in gate:
+                    gate_name = gate["name"]
+                    self.gate_ports.append(gate_name)
+                    # Assumindo que a instância usa conexão posicional, o primeiro argumento é a saída.
+                    conns = gate.get("connections", {})
+                    if conns:
+                        # Usa o primeiro net conectado como saída
+                        out_net = list(conns.values())[0]
+                        self.gate_mapping[gate_name] = out_net
+            if self.gate_ports:
+                print(f"Gates detectados: {self.gate_ports}")
+                print(f"Mapeamento de gates para nets: {self.gate_mapping}")
+            else:
+                print("Nenhum gate detectado no design.")
+        else:
+            print("Nenhum gate detectado no design.")
+    
+        # Extrai os nomes dos gates, se disponíveis
+        # Aqui assume-se que a netlist possui uma chave "gates" com uma lista de instâncias
+        
+        self.gate_ports = []
+        if "gates" in self.module:
+            # Cada instância de gate é um dicionário que deve ter a chave "name"
+            self.gate_ports = [gate["name"] for gate in self.module["gates"] if "name" in gate]
+            if self.gate_ports:
+                print(f"Gates detectados: {self.gate_ports}")
+            else:
+                print("Nenhum gate detectado no design.")
+        else:
+            print("Nenhum gate detectado no design.")
     def generate_random_vector(self, seed=None): # possivel melhora aqui
         """Gera um vetor de teste aleatório para as entradas extraídas."""
         if seed is not None:
@@ -80,45 +114,83 @@ class CombinationalSimulator:
         - Se fault_port é uma porta de gate (ex.: AND3_0): força a porta de saída (assumindo "Y")
           a 0.
         - Se fault_port não é declarado externamente, assume-se que é um net interno e usa
-          referência hierárquica (ex.: uut.N11).
+          referência hierárquica (ex.: uut.<fault.port>).
         """
         tb_lines = []
         tb_lines.append("`timescale 1ns/1ps")
         tb_lines.append("module tb;")
+        
+        
         # Declara as entradas e saídas com base na netlist extraída
         for inp in self.input_ports:
             tb_lines.append(f"  reg {inp};")
         for out in self.output_ports:
             tb_lines.append(f"  wire {out};")
         tb_lines.append("")
+        """
+          reg N1;
+          reg N2;
+          ...
+          wire N10;
+          wire N11;
+        """
+        
+        
         # Instancia o design; assume que o nome do módulo é self.module_name
         conns = ", ".join([f".{p}({p})" for p in (self.input_ports + self.output_ports)])
         tb_lines.append(f"  {self.module_name} uut ({conns});")
+        
+        """
+          c17 uut (.N1(N1), .N2(N2), .N10(N10), .N11(N11)); // instanciando o módulo
+        """
+        
         tb_lines.append("")
         tb_lines.append("  initial begin")
         # Aplica os valores de entrada do vetor
         for inp in self.input_ports:
             tb_lines.append(f"    {inp} = {vector[inp]};")
-        # Injeta a falha, se solicitada
+        """
+          N1 = 1; // aplica os vetores correspondentes a cada entrada
+          N2 = 0;
+          N3 = 1;
+          ...
+        """   
+            
+            
+        # injeção de falha se o parametro fault_port for True
         if fault and fault_port:
-            tb_lines.append("    #5;")
+    
+            tb_lines.append("    #5;") # aguarda 5 unidades pra injetar a falha
             if fault_port in self.input_ports:
                 # Para entradas: força o valor oposto
                 original = vector[fault_port]
                 forced = 0 if original == 1 else 1
                 tb_lines.append(f"    {fault_port} = {forced};  // Falha em porta de entrada: força valor oposto")
+                """
+                N1 = 1; // valor inicial correto
+                N1 = 0;  // Falha em porta de entrada: força valor oposto
+                """
             elif fault_port in self.output_ports:
                 # Para saídas: força diretamente o valor 0
                 tb_lines.append(f"    force {fault_port} = 0;  // Falha em porta de saída: força valor 0")
+                """
+                  force N10 = 0;  // Falha em porta de saída: força valor 0 (nesse caso precisaria usar o force)
+                """
                 
-                
-            elif hasattr(self, "gate_ports") and fault_port in self.gate_ports: # isso aqui ainda não funciona
-                tb_lines.append(f"    force uut.{fault_port} = 0;  // Falha em porta de gate: força saída a 0")
-                
-                
+            elif fault_port in self.gate_ports:
+                # Para um gate: utiliza o mapeamento para injetar falha no net de saída
+                out_net = self.gate_mapping.get(fault_port)
+                if out_net:
+                    tb_lines.append(f"    force uut.{out_net} = 0;  // Falha em porta lógica: força net de saída '{out_net}' a 0")
+                else:
+                    tb_lines.append(f"    // Aviso: não foi possível mapear o gate '{fault_port}' para um net de saída")
             else:
-                # Sinal interno: utiliza referência hierárquica
+                # Caso o sinal não seja declarado externamente, assume-se que é um net interno
                 tb_lines.append(f"    force uut.{fault_port} = 0;  // Falha em net interno: força valor 0")
+       
+                """
+                  force uut.AND3_0 = 0;  // Falha em porta lógica: força saída a 0
+                """
         tb_lines.append("    #10;")
         # Imprime as saídas usando $display (formato: OUTPUT: <sinal> = <valor>)
         for out in self.output_ports:
@@ -129,6 +201,38 @@ class CombinationalSimulator:
         with open(tb_filename, "w") as f:
             f.write("\n".join(tb_lines))
         print(f"Testbench gerado em {tb_filename}")
+        
+        # codigo gerado no final
+        """"
+                `timescale 1ns/1ps
+        module tb;
+        
+        reg N1;    // Exemplo: sinal de entrada N1
+        reg N2;    // Exemplo: sinal de entrada N2
+        
+        wire N10;  // Exemplo: sinal de saída N10
+        wire N11;  // Exemplo: sinal de saída N11
+        
+        c17 uut (.N1(N1), .N2(N2), .N10(N10), .N11(N11));
+
+        initial begin
+            N1 = 1;  // Sinal N1 recebe valor 1
+            N2 = 0;  // Sinal N2 recebe valor 0
+            
+            #5;
+            
+            force N10 = 0;  // Força a saída N10 a assumir o valor 0
+
+            #10;
+            
+            $display("OUTPUT: N10 = %b", N10);  // Exibe o valor de N10
+            $display("OUTPUT: N11 = %b", N11);  // Exibe o valor de N11
+
+            $finish;
+        end
+        endmodule
+
+        """
 
 
 
