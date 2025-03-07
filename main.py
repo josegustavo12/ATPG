@@ -20,12 +20,12 @@ import time as t
 
 def main():
     # Configurações fixas
-    DESIGN_VERILOG = "verilog/c17.v"
-    NUM_SIMULATIONS = 1
+    DESIGN_VERILOG = "verilog/c6288.v"
+    NUM_SIMULATIONS = 100
 
     # FAULT_TYPE: defina o tipo de sinal para injeção de falha.
     # Opções: "gate", "input", "output" ou "wire"
-    FAULT_TYPE = "wire"
+    FAULT_TYPE = "gate"
 
     # Etapa 1: Extração da netlist do design
     print("Extraindo estrutura do design...")
@@ -71,6 +71,8 @@ def main():
         else:
             print("Nenhum output disponível para injeção de falha. Verifique a netlist.")
             return
+        
+    # wire ainda não está funcionando 100%
     elif FAULT_TYPE == "wire":
         # Para wires, acessamos o dicionário 'wires' extraído pelo VerilogExtractor
         wires = netlist["modules"][module_name].get("wires", {})
@@ -129,10 +131,10 @@ def main():
     print(f"Tempo de execução: {tempo_execucao:.5f} segundos")
     
     # Código para salvar resultados em CSV (comentado)
-    # taxa_deteccao = detected_count / NUM_SIMULATIONS
-    # num_portas, num_entradas, num_saidas = simulator.get_infos()
-    # salvar_dados_csv(DESIGN_VERILOG, tempo_execucao, NUM_SIMULATIONS, num_entradas, num_saidas, taxa_deteccao, fault_signal)
-    # gerar_tabela_csv("data/resultados_simulacao.csv")
+    taxa_deteccao = detected_count / NUM_SIMULATIONS
+    num_portas, num_entradas, num_saidas = simulator.get_infos()
+    salvar_dados_csv(DESIGN_VERILOG, tempo_execucao, NUM_SIMULATIONS, num_entradas, num_saidas, taxa_deteccao, fault_signal, "data/resultados_simulacao_gates.csv")
+    #gerar_tabela_csv("data/resultados_simulacao_gates.csv")
 
 if __name__ == "__main__":
     main()

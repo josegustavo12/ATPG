@@ -307,6 +307,8 @@ class CombinationalSimulator:
         return num_gates, num_entradas, num_saidas
 
 
+
+# função de teste
 def main():
     if len(sys.argv) < 3:
         print("Uso: python simulator.py <netlist.json> <design.v> [--seed SEED]")

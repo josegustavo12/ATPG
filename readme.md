@@ -63,6 +63,26 @@ A estrutura de arquivos do projeto é organizada da seguinte forma:
 ![Tabela de Simulação](data/tabela_simulacao.png)
 
 
+## 6. Estudo sobre falhas
+Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em sistemas digitais. Como referencias vou utilizar os livros/artigos:
+
+**1. Plataforma para testes de circuitos digitais.**
+   *Hennes, Marco André Binz*
+
+[Artigo](https://repositorio.unisc.br/jspui/handle/11624/297)
+
+**2. Digital Systems Testing and Testable Design**
+   *Miron Abramovici, Melvin A. Breuer, Arthur D. Friedman*
+
+[Livro](https://ieeexplore.ieee.org/book/5266057)
+
+**3. Aumento da testabilidade do hardware com auxilio de técnicas de teste de software**
+   *MARGRIT RENI KRUG*
+[Livro](https://www.lume.ufrgs.br/handle/10183/12672)
+# Introdução:
+
+
+
 ---
 
 ## Fontes e Artigos Utilizados
@@ -106,83 +126,3 @@ A estrutura de arquivos do projeto é organizada da seguinte forma:
    *Ruidi Qiu et al. (2024).*  
    Aborda a geração automática de testbenches a partir de descrições de designs HDL.  
    [arXiv](https://arxiv.org/abs/2407.03891)
-
----
-
-## 7. Livros Recomendados
-
-### Eletrônica Digital e Verilog
-- **Digital Design: With an Introduction to the Verilog HDL**  
-  *M. Morris Mano & Michael D. Ciletti (5ª ed., 2013).*  
-  Um dos livros mais clássicos para entender os fundamentos da eletrônica digital e a linguagem Verilog.
-
-- **Digital Systems Testing and Testable Design**  
-  *Miron Abramovici, Melvin A. Breuer & Arthur D. Friedman (1994).*  
-  Aborda métodos de teste de sistemas digitais, incluindo algoritmos ATPG e conceitos de testabilidade.
-
-- **Essentials of Electronic Testing for Digital, Memory and Mixed-Signal VLSI Circuits**  
-  *Michael L. Bushnell & Vishwani D. Agrawal (2000).*  
-  Guia completo sobre testes eletrônicos e técnicas para garantir a confiabilidade de circuitos VLSI.
-
-### Testbench e Verificação de Hardware
-- **Writing Testbenches: Functional Verification of HDL Models**  
-  *Janick Bergeron (2ª ed., 2003).*  
-  Guia prático para a criação de testbenches e verificação funcional de designs HDL, com foco em boas práticas de automação de testes.
-
-- **Python for RTL Verification: A Complete Course in Python, cocotb, and pyuvm**  
-  *Ray Salemi (2022).*  
-  Livro que une Python e verificação RTL, mostrando como usar frameworks modernos para criar testbenches e automatizar a verificação de hardware.
-
-### Confiabilidade e Inferência Bayesiana
-- **Fault-Tolerant Systems**  
-  *Israel Koren & C. Mani Krishna (2007).*  
-  Aborda fundamentos de sistemas tolerantes a falhas e técnicas de confiabilidade aplicadas a sistemas digitais.
-
----
-
-## 8. Conclusão
-
-Este projeto integra diversas ferramentas e técnicas para a análise de confiabilidade de circuitos combinacionais. O fluxo desenvolvido envolve:
-
-- **Extração automática** do design Verilog utilizando Pyverilog.
-- **Geração de vetores de teste** aleatórios com reprodutibilidade (via seed).
-- **Criação dinâmica de testbenches** para simulação com Icarus Verilog, permitindo a comparação entre a simulação do circuito correto e a simulação com uma falha injetada (perturbação em uma porta).
-- **Processamento dos resultados** para verificar se a falha é detectada, permitindo, futuramente, integrar essa informação com métodos de inferência bayesiana para análise de confiabilidade.
-
-As fontes e livros recomendados fornecem um embasamento teórico que vai desde os fundamentos da eletrônica digital e HDL até técnicas avançadas de testes e verificação, essenciais para quem deseja aprofundar no tema.
-
----
-
-## 9. Licença
-
-(Defina a licença do projeto, se aplicável.)
-
----
-
-Este README foi elaborado para servir como parte de um relatório científico e fornecer uma visão completa e detalhada do funcionamento e dos fundamentos teóricos do projeto. Se houver dúvidas ou sugestões, por favor, entre em contato.
-
----
-
-### Fontes e Referências Citadas
-
-1. Takamaeda-Yamazaki, S. (2015). *Pyverilog: A Python-Based Hardware Design Processing Toolkit for Verilog HDL.* Springer. [DOI](https://doi.org/10.1007/978-3-319-16214-0_42)
-2. Williams, S., & Baxter, M. (2002). *Icarus Verilog: Open-Source Verilog More Than a Year Later.* Linux Journal.
-3. Roth, J. P. (1966). *Diagnosis of Automata Failures: A Calculus and a Method.* IBM Journal of R&D.
-4. Goel, P. (1981). *An Implicit Enumeration Algorithm to Generate Tests for Combinational Logic Circuits.* IEEE.
-5. Fujiwara, H., & Shimono, T. (1983). *On the Acceleration of Test Generation Algorithms.* IEEE Transactions on Computers.
-6. Na, J., & Lee, D. (2011). *Simulated Fault Injection Using Simulator Modification Technique.* ETRI Journal.
-7. Bathla, S., & Vasudevan, V. (2023). *A Framework for Reliability Analysis of Combinational Circuits Using Approximate Bayesian Inference.* IEEE Transactions on VLSI Systems.
-8. Qiu, R. et al. (2024). *AutoBench: Automatic Testbench Generation and Evaluation Using LLMs for HDL Design.* arXiv preprint.
-
-### Livros Recomendados
-
-- **Digital Design: With an Introduction to the Verilog HDL** – M. Morris Mano & Michael D. Ciletti.
-- **Digital Systems Testing and Testable Design** – Miron Abramovici, Melvin A. Breuer & Arthur D. Friedman.
-- **Essentials of Electronic Testing for Digital, Memory and Mixed-Signal VLSI Circuits** – Michael L. Bushnell & Vishwani D. Agrawal.
-- **Writing Testbenches: Functional Verification of HDL Models** – Janick Bergeron.
-- **Python for RTL Verification: A Complete Course in Python, cocotb, and pyuvm** – Ray Salemi.
-- **Fault-Tolerant Systems** – Israel Koren & C. Mani Krishna.
-
----
-
-*José Gustavo Victor Pinheiro Alencar, ICMC-USP – 2025*

@@ -1,0 +1,7 @@
+Nome do arquivo,Tempo de Execução,Número de simulações,Número de Entradas,Número de Saidas,Taxa de Detecção,Gate/Wire perturbada
+c880.v,10.15366,100,60,26,37.00%,AND2_18
+c880.v,10.60252,100,60,26,42.00%,NAND2_26
+c17.v,5.85227,100,5,2,15.00%,NAND2_2
+c17.v,5.93860,100,5,2,41.00%,NAND2_6
+c6288.v,34.32131,100,32,32,54.00%,NOR2_947
+c6288.v,32.34586,100,32,32,65.00%,NOR2_441
