@@ -1,0 +1,12 @@
+# Leitura do arquivo Verilog
+read_verilog c17.v
+
+# definicao do toplevel
+hierarchy -check -top c17
+
+
+# Escrita da netlist em formato JSON
+write_json c17.json
+
+# Geração do diagrama esquemático
+show -format svg -prefix diagrama
