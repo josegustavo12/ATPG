@@ -20,18 +20,19 @@ import time as t
 
 def main():
     # Configurações fixas
-    DESIGN_VERILOG = "verilog/c6288.v"
-    NUM_SIMULATIONS = 100
+    DESIGN_VERILOG = "verilog/c432.v"
+    NUM_SIMULATIONS = 356
 
     # FAULT_TYPE: defina o tipo de sinal para injeção de falha.
     # Opções: "gate", "input", "output" ou "wire"
-    FAULT_TYPE = "gate"
+    FAULT_TYPE = "input"
 
     # Etapa 1: Extração da netlist do design
     print("Extraindo estrutura do design...")
     extractor = VerilogExtractor()
     try:
         netlist = extractor.extract(DESIGN_VERILOG)
+        print(netlist)
         extractor.save_json("simulacao/data/netlist.json")
     except Exception as e:
         print(f"Erro na extração: {e}")
@@ -91,21 +92,22 @@ def main():
     print(f"\nIniciando {NUM_SIMULATIONS} simulações com falha no sinal '{fault_signal}'...")
     detected_count = 0
     inicio = t.time()
-    for i in range(NUM_SIMULATIONS):
+    test_vector = simulator.carregar_vetores("PodemVectors/c432_out.txt")
+
+    for i in range(len(test_vector)):
         # Gera vetor de teste aleatório
-        test_vector = simulator.generate_random_vector()
-        
+        #test_vector = simulator.generate_random_vector()
         # Simulação sem falha (design bom)
         good_result = simulator.simulate(
             DESIGN_VERILOG,
-            test_vector,
+            test_vector[i],
             fault=False
         )
         
         # Simulação com falha no sinal selecionado
         fault_result = simulator.simulate(
             DESIGN_VERILOG,
-            test_vector,
+            test_vector[i],
             fault=True,
             fault_port=fault_signal
         )
@@ -133,7 +135,7 @@ def main():
     # Código para salvar resultados em CSV (comentado)
     taxa_deteccao = detected_count / NUM_SIMULATIONS
     num_portas, num_entradas, num_saidas = simulator.get_infos()
-    salvar_dados_csv(DESIGN_VERILOG, tempo_execucao, NUM_SIMULATIONS, num_entradas, num_saidas, taxa_deteccao, fault_signal, "data/resultados_simulacao_gates.csv")
+    salvar_dados_csv(DESIGN_VERILOG, tempo_execucao, NUM_SIMULATIONS, num_entradas, num_saidas, taxa_deteccao, fault_signal, "data/resultados_simulacao_podem.csv")
     #gerar_tabela_csv("data/resultados_simulacao_gates.csv")
 
 if __name__ == "__main__":

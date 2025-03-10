@@ -51,13 +51,10 @@ A estrutura de arquivos do projeto é organizada da seguinte forma:
      - Os resultados obtidos na simulação do design “bom” e do design com a falha são comparados.  
      - Se as saídas diferirem, a falha foi detectada.
 
-## 4. Tecnologias Utilizadas
-
-- **Python 3:** Linguagem principal para desenvolvimento do fluxo.
-- **Pyverilog:** Toolkit para parsing e análise de códigos Verilog.
-- **Icarus Verilog:** Simulador open-source para compilação e execução de designs Verilog.
-- **Subprocess (Python):** Módulo para chamar comandos de linha de comando (usado para integrar o Icarus Verilog).
-- **JSON:** Formato para salvar e manipular a estrutura extraída do design.
+## 4. Atualizações
+- Implementação do PODEM:
+   - Problemas: para implementar o PODEM, preciso de uma netlist mais completa e detalhada, já que o algoritmo irá analisar bem a fundo o codigo
+      - Solução: utilizar o Yosys para gerar uma netlist mais detalhada e completa, que pode ser utilizada pelo algoritmo PODEM para análise mais aprofundada do código. 
 
 ## 5. Testes realizados
 ![Tabela de Simulação](data/tabela_simulacao.png)
@@ -78,7 +75,7 @@ Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em s
 
 **3. Aumento da testabilidade do hardware com auxilio de técnicas de teste de software**
    *MARGRIT RENI KRUG*
-[Livro](https://www.lume.ufrgs.br/handle/10183/12672)
+[Artigo](https://www.lume.ufrgs.br/handle/10183/12672)
 # Introdução:
 
 
@@ -100,7 +97,7 @@ Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em s
 3. **Diagnosis of Automata Failures: A Calculus and a Method**  
    *J. P. Roth (1966).*  
    Artigo seminal que introduziu o D-Algorithm para geração de testes.  
-   [Semantic Scholar](https://www.semanticscholar.org/paper/Diagnosis-of-automata-failures%3A-a-calculus-and-a-Roth/)
+   [IEEE Xplore](https://ieeexplore.ieee.org/document/5392030)
 
 4. **An Implicit Enumeration Algorithm to Generate Tests for Combinational Logic Circuits**  
    *Prabhu Goel (1981).*  
@@ -122,7 +119,6 @@ Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em s
    Aplica inferência bayesiana para estimar a confiabilidade de circuitos combinacionais.  
    [IEEE Xplore](https://ieeexplore.ieee.org/document/10026780)
 
-8. **AutoBench: Automatic Testbench Generation and Evaluation Using LLMs for HDL Design**  
-   *Ruidi Qiu et al. (2024).*  
-   Aborda a geração automática de testbenches a partir de descrições de designs HDL.  
-   [arXiv](https://arxiv.org/abs/2407.03891)
+8. **Fault, an Open Source DFT Toolchain**
+   *Mohamed Gaber, Manar Abdelatty, and Mohamed Shalan*
+   [Woset](https://woset-workshop.github.io/PDFs/2019/a13.pdf)

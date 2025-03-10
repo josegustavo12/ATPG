@@ -1,0 +1,4 @@
+Nome do arquivo,Tempo de Execução,Número de simulações,Número de Entradas,Número de Saidas,Taxa de Detecção,Gate/Wire perturbada
+c432.v,5.85750,100,36,7,36.00%,G2
+c432.v,18.77860,100,36,7,166.00%,G6
+c432.v,18.78016,356,36,7,3.09%,G16

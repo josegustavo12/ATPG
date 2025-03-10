@@ -77,19 +77,37 @@ class CombinationalSimulator:
         else:
             print("Nenhum gate detectado no design.")
     
-        # Extrai os nomes dos gates, se disponíveis
-        # Aqui assume-se que a netlist possui uma chave "gates" com uma lista de instâncias
-        
-        self.gate_ports = []
-        if "gates" in self.module:
-            # Cada instância de gate é um dicionário que deve ter a chave "name"
-            self.gate_ports = [gate["name"] for gate in self.module["gates"] if "name" in gate]
-            if self.gate_ports:
-                print(f"Gates detectados: {self.gate_ports}")
-            else:
-                print("Nenhum gate detectado no design.")
-        else:
-            print("Nenhum gate detectado no design.")
+    def carregar_vetores(self, nome_arquivo):
+        """
+        Lê um arquivo contendo vetores de teste e retorna uma lista de dicionários,
+        compatível com o simulador.
+
+        Args:
+            nome_arquivo (str): Caminho do arquivo com vetores de teste.
+            input_ports (list): Lista com nomes das portas de entrada do circuito.
+
+        Returns:
+            list: Lista de dicionários com os vetores de teste mapeados às entradas.
+        """
+        vetores = []
+
+        with open(nome_arquivo, 'r') as arquivo:
+            linhas = arquivo.readlines()
+
+            for linha in linhas:
+                linha = linha.strip()
+                if ":" in linha:
+                    _, vetor_bits = linha.split(":")
+                    vetor_str = vetor_str = vetor_bits = linha.split(":")[1].strip()
+
+                    if len(vetor_str) != len(self.input_ports):
+                        raise ValueError(f"Tamanho do vetor ({len(vetor_str)}) não corresponde às entradas ({len(self.input_ports)})")
+
+                    vetor_dict = {inp: int(bit) for inp, bit in zip(self.input_ports, vetor_str)}
+                    vetores.append(vetor_dict)
+
+        return vetores
+
     def generate_random_vector(self, seed=None): # possivel melhora aqui
         """Gera um vetor de teste aleatório para as entradas extraídas."""
         if seed is not None:
@@ -98,6 +116,7 @@ class CombinationalSimulator:
         for inp in self.input_ports:
             vector[inp] = random.choice([0, 1])
         return vector
+
 
     def generate_random_vectors(self, count=1, seed=None):
         """Gera uma lista de vetores aleatórios."""
