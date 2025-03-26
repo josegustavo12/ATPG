@@ -9,6 +9,10 @@ Fluxo simplificado para simulações:
   4. Seleciona aleatoriamente um sinal do tipo escolhido.
   5. Executa simulações com vetores aleatórios.
   6. Calcula e exibe estatísticas de detecção, mostrando o sinal injetado.
+
+TODO:
+    fazer simulação com vetores de teste do Podem
+    receber iscas 89
 """
 
 import json
@@ -20,8 +24,8 @@ import time as t
 
 def main():
     # Configurações fixas
-    DESIGN_VERILOG = "verilog/c432.v"
-    NUM_SIMULATIONS = 356
+    DESIGN_VERILOG = "verilog/s27.v"
+    NUM_SIMULATIONS = 100
 
     # FAULT_TYPE: defina o tipo de sinal para injeção de falha.
     # Opções: "gate", "input", "output" ou "wire"
@@ -92,22 +96,22 @@ def main():
     print(f"\nIniciando {NUM_SIMULATIONS} simulações com falha no sinal '{fault_signal}'...")
     detected_count = 0
     inicio = t.time()
-    test_vector = simulator.carregar_vetores("PodemVectors/c432_out.txt")
+    #test_vector = simulator.carregar_vetores("PodemVectors/c432_out.txt")
 
-    for i in range(len(test_vector)):
+    for i in range(NUM_SIMULATIONS):
         # Gera vetor de teste aleatório
-        #test_vector = simulator.generate_random_vector()
+        test_vector = simulator.generate_random_vector()
         # Simulação sem falha (design bom)
         good_result = simulator.simulate(
             DESIGN_VERILOG,
-            test_vector[i],
+            test_vector,
             fault=False
         )
         
         # Simulação com falha no sinal selecionado
         fault_result = simulator.simulate(
             DESIGN_VERILOG,
-            test_vector[i],
+            test_vector,
             fault=True,
             fault_port=fault_signal
         )

@@ -61,7 +61,95 @@ A estrutura de arquivos do projeto é organizada da seguinte forma:
 
 
 ## 6. Estudo sobre falhas
-Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em sistemas digitais. Como referencias vou utilizar os livros/artigos:
+Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em sistemas digitais.
+
+
+
+## **1. Quantidade Total de Falhas**
+
+A **quantidade máxima teórica de falhas stuck-at** em um circuito pode ser calculada com:
+
+```math
+\text{Total de falhas} = 2 \times (\text{Número total de linhas no circuito})
+```
+
+---
+
+## **2. Cobertura de Falhas**
+
+A cobertura de falhas é a **porcentagem de falhas que foram detectadas pelos testes**:
+
+```math
+\text{Cobertura de falhas} = \left( \frac{\text{Falhas detectadas}}{\text{Total de falhas}} \right) \times 100\%
+```
+
+---
+
+## **3. Número Mínimo de Padrões de Teste**
+
+O número **mínimo teórico** de vetores de teste necessários para cobrir todas as falhas pode ser estimado por:
+
+```math
+P_{\min} \approx \log_2(T)
+```
+
+Onde:
+- \( P_{\min} \) = Número mínimo de padrões de teste necessários.
+- \( T \) = Número total de falhas distintas.
+
+---
+
+## **4. Número Máximo de Testes Necessários**
+
+Para um circuito com \( n \) entradas, o **número máximo de testes** necessários para garantir a detecção de todas as falhas por força bruta é:
+
+```math
+P_{\max} = 2^n
+```
+
+Onde:
+- \( P_{\max} \) = Número máximo de testes necessários.
+- \( n \) = Número de entradas do circuito.
+
+---
+
+## **5. Razão de Compressão de Testes**
+
+Uma métrica importante para avaliar a eficiência dos padrões de teste gerados:
+
+```math
+\text{Razão de Compressão} = \left( \frac{P_{\max}}{P_{\text{gerado}}} \right) \times 100\%
+```
+
+Onde:
+- \( P_{\max} \) = Número máximo de vetores de teste possíveis.
+- \( P_{\text{gerado}} \) = Número de vetores gerados pelo ATPG.
+
+
+---
+
+- **Fórmulas 1 e 4:**
+  - "Digital Systems Testing and Testable Design" de Miron Abramovici, Melvin A. Breuer e Arthur D. Friedman.
+    - [Link](https://archive.org/details/digitalsystemste0000abra)
+
+- **Fórmula 2:**
+  - "Essentials of Electronic Testing for Digital, Memory, and Mixed-Signal VLSI Circuits" de Michael L. Bushnell e Vishwani D. Agrawal.
+    - [Link](https://archive.org/details/essentialsofelec0000bush)
+
+- **Fórmula 3:**
+  - "Essentials of Electronic Testing for Digital, Memory, and Mixed-Signal VLSI Circuits" de Michael L. Bushnell e Vishwani D. Agrawal.
+    - [Link](https://archive.org/details/essentialsofelec0000bush)
+
+- **Fórmula 5:**
+  - "System-on-Chip Test Architectures: Nanometer Design for Testability" de Laung-Terng Wang, Cheng-Wen Wu e Xiaoqing Wen.
+    - [Link](https://www.amazon.com/System-Chip-Test-Architectures-Testability/dp/0123705975)
+
+
+## 7. TODO
+- implementar o dado de "coverage" que é a quantidade de falhas dectadas dentro das possiveis
+- implementar diversas falhas 
+   - incluir também o cálculo de falhas máximo
+
 
 **1. Plataforma para testes de circuitos digitais.**
    *Hennes, Marco André Binz*
@@ -76,11 +164,9 @@ Para complementar o repositório, vou anotar aqui o meu estudo sobre falhas em s
 **3. Aumento da testabilidade do hardware com auxilio de técnicas de teste de software**
    *MARGRIT RENI KRUG*
 [Artigo](https://www.lume.ufrgs.br/handle/10183/12672)
+
+
 # Introdução:
-
-
-
----
 
 ## Fontes e Artigos Utilizados
 

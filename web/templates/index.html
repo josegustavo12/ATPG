@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulação ATPG - Escolha de Design</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .design-image {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4">Simulação ATPG - Benchmarks ISCAS85</h1>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-warning">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    
+    <form action="{{ url_for('simulate') }}" method="post">
+      <div class="form-group">
+        <label for="design">Selecione o Design:</label>
+        <select id="design" name="design" class="form-control">
+          <option value="" disabled selected>-- Selecione um design --</option>
+          {% for key, desc in designs.items() %}
+            <option value="{{ key }}">{{ key }} - {{ desc }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <img id="designImage" src="" alt="Imagem do Design" class="design-image d-none">
+      </div>
+      
+      <div class="form-group">
+        <label for="num_vectors">Número de Vetores de Teste:</label>
+        <input type="number" id="num_vectors" name="num_vectors" class="form-control" value="5" min="1">
+      </div>
+      
+      <div class="form-group">
+        <label for="num_vectors">Número de Falhas:</label>
+        <input type="number" id="num_faults" name="num_faults" class="form-control" value="5" min="1">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Simular</button>
+    </form>
+  </div>
+  
+  <script>
+    const designSelect = document.getElementById('design');
+    const designImage = document.getElementById('designImage');
+    
+    designSelect.addEventListener('change', function() {
+      const selected = this.value;
+      if (selected) {
+        designImage.src = '/static/data/' + selected + '.png';
+        designImage.classList.remove('d-none');
+      } else {
+        designImage.src = '';
+        designImage.classList.add('d-none');
+      }
+    });
+  </script>
+</body>
+</html>

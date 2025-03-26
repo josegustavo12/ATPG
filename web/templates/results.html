@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados da Simulação - {{ design }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { background-color: #f7f7f7; }
+    .result-section { margin-top: 20px; }
+    .card { margin-bottom: 20px; }
+    .table th, .table td { vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="d-flex justify-content-end mb-3">
+      <a href="{{ url_for('index') }}" class="btn btn-primary">Nova Simulação</a>
+    </div>
+
+    <div class="jumbotron py-4">
+      <h1 class="display-4">Resultados da Simulação</h1>
+      <p class="lead">{{ design }} - {{ description }}</p>
+    </div>
+    
+    <!-- Seção de Análise dos Resultados ATPG -->
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Análise dos Resultados ATPG</h4>
+      </div>
+      <div class="card-body">
+        {% if analysis.vector_discrepancies is defined %}
+          <table class="table table-bordered table-hover">
+            <tr>
+              <th>Total de Vetores</th>
+              <td>{{ analysis.total_vectors }}</td>
+            </tr>
+            <tr>
+              <th>Vetores com Discrepância</th>
+              <td>{{ analysis.vectors_with_discrepancy }}</td>
+            </tr>
+            <tr>
+              <th>Percentual de Discrepância</th>
+              <td>{{ analysis.discrepancy_percentage }}%</td>
+            </tr>
+            <tr>
+              <th>Total de Sinais Comparados</th>
+              <td>{{ analysis.total_signals_compared }}</td>
+            </tr>
+            <tr>
+              <th>Total de Diferenças</th>
+              <td>{{ analysis.total_differences }}</td>
+            </tr>
+          </table>
+        {% elif analysis.simulation_details is defined %}
+          <table class="table table-bordered table-hover">
+            <tr>
+              <th>Total de Vetores</th>
+              <td>{{ analysis.total_vectors }}</td>
+            </tr>
+            <tr>
+              <th>Total de Simulações com Falhas</th>
+              <td>{{ analysis.total_fault_simulations }}</td>
+            </tr>
+            <tr>
+              <th>Falhas Detectadas</th>
+              <td>{{ analysis.detected_faults }}</td>
+            </tr>
+            <tr>
+              <th>Percentual de Detecção</th>
+              <td>{{ analysis.detection_percentage }}%</td>
+            </tr>
+            <tr>
+              <th>Total de Sinais Comparados (Falhas)</th>
+              <td>{{ analysis.overall_total_signals_compared }}</td>
+            </tr>
+            <tr>
+              <th>Total de Diferenças (Falhas)</th>
+              <td>{{ analysis.overall_total_differences }}</td>
+            </tr>
+          </table>
+        {% endif %}
+      </div>
+    </div>
+    
+    <!-- Detalhes por Vetor (para simulação única) -->
+    {% if analysis.vector_discrepancies is defined %}
+    <div class="card">
+      <div class="card-header bg-secondary text-white">
+        <h4 class="mb-0">Detalhes por Vetor</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Vetor</th>
+              <th>Número de Diferenças</th>
+              <th>Diferenças (sinal: (sem_falha, com_falha))</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for vec_id, details in analysis.vector_discrepancies.items() %}
+            <tr>
+              <td>{{ vec_id }}</td>
+              <td>{{ details.num_differences }}</td>
+              <td>
+                {% for signal, diff in details.differences.items() %}
+                  <strong>{{ signal }}:</strong> ({{ diff[0] }}, {{ diff[1] }})<br>
+                {% endfor %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- Detalhes das Simulações de Falhas (para múltiplas simulações) -->
+    {% if analysis.simulation_details is defined %}
+    <div class="card">
+      <div class="card-header bg-secondary text-white">
+        <h4 class="mb-0">Detalhes de Cada Simulação de Falha</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Simulação</th>
+              <th>Vetores com Discrepância</th>
+              <th>Total de Sinais Comparados</th>
+              <th>Total de Diferenças</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for sim_name, details in analysis.simulation_details.items() %}
+            <tr>
+              <td>{{ sim_name }}</td>
+              <td>{{ details.vectors_with_discrepancy }}</td>
+              <td>{{ details.total_signals_compared }}</td>
+              <td>{{ details.total_differences }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- Vetores de Teste Gerados -->
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        <h4 class="mb-0">Vetores de Teste Gerados</h4>
+      </div>
+      <div class="card-body">
+        {% if test_vectors and test_vectors|length > 0 %}
+          <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+              <tr>
+                <th>#</th>
+                {% for key in test_vectors[0].keys() %}
+                  <th>{{ key }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for vector in test_vectors %}
+                {% set is_affected = false %}
+                {% if analysis.vector_discrepancies is defined %}
+                  {% if analysis.vector_discrepancies[loop.index|string] is defined %}
+                    {% set is_affected = analysis.vector_discrepancies[loop.index|string].num_differences > 0 %}
+                  {% endif %}
+                {% endif %}
+                <tr class="{% if is_affected %}table-danger{% endif %}">
+                  <td>{{ loop.index }}</td>
+                  {% for key in test_vectors[0].keys() %}
+                    <td>{{ vector[key] }}</td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>Nenhum vetor de teste gerado.</p>
+        {% endif %}
+      </div>
+    </div>
+    
+    <!-- Resultados Brutos da Simulação -->
+    <div class="card">
+      <div class="card-header">
+        <h4 class="mb-0">Resultados da Simulação</h4>
+      </div>
+      <div class="card-body">
+        <pre>{{ sim_results | tojson(indent=2) }}</pre>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -95,6 +95,24 @@ class VerilogExtractor:
                                         gate_info["connections"][port_name] = conn_name
                                 mod_info["gates"].append(gate_info)
 
+                    # Em alguns netlists ISCAS89 os instanciamentos aparecem como nós do tipo Gate.
+                    if hasattr(vast, 'Gate') and isinstance(item, vast.Gate):
+                        gate_info = {
+                            "name": item.name,
+                            "type": item.gatetype if hasattr(item, 'gatetype') else "unknown",
+                            "connections": {}
+                        }
+                        if item.portlist:
+                            for port_arg in item.portlist:
+                                port_name = port_arg.portname
+                                if hasattr(port_arg.argname, 'name'):
+                                    conn_name = port_arg.argname.name
+                                else:
+                                    conn_name = str(port_arg.argname)
+                                gate_info["connections"][port_name] = conn_name
+                        mod_info["gates"].append(gate_info)
+
+
                 modules_info[mod_name] = mod_info
         self.structure = {"modules": modules_info}
         return self.structure
