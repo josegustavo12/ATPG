@@ -5,7 +5,7 @@ from generate_testbench import GenerateTB
 
 def main():
     # Arquivo Verilog do design
-    design_file = "Benchmarks/ISCAS85/c6288/c6288.v"
+    design_file = "c499.v"
     modulo_file = ""
     # Etapa 1: Extração com Yosys
     extractor = YosysExtractor()

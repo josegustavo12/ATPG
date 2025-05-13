@@ -21,7 +21,6 @@ class GenerateTB:
         """Gera um vetor de teste aleatório para as entradas extraídas."""
         if rng is None:
             rng = random.Random()
-        # Utiliza compreensão de dicionário para gerar o vetor
         return {inp: rng.choice([0, 1]) for inp in self.input_ports}
 
     def generate_random_vectors(self, count=1, seed=None):
@@ -38,7 +37,7 @@ class GenerateTB:
         - Se fault_port é uma porta de entrada: força o valor oposto.
         - Se fault_port é uma porta de saída: usa 'force' para fixar o valor a 0.
         - Se fault_port é uma porta de gate (ex.: AND3_0): força a porta de saída (assumindo "Y")
-            a 0.
+            a 0 ou 1 dependendo do valor dentro de fault_value.
         - Se fault_port não é declarado externamente, assume-se que é um net interno e usa
             referência hierárquica (ex.: uut.<fault.port>).
         """
